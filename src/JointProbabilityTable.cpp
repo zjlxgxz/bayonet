@@ -319,6 +319,8 @@ void JointProbabilityTable::FillMap(std::vector<unsigned int> variablesTotStates
   return;
  }
 
+ std::cout<< "Phase 1 finished" <<std::endl;
+
  //1- Creation of the vector that contains the Subsets of unsigned int
  std::vector<std::vector<unsigned int>> vector_container; 
  for (auto it = variablesTotStates.begin() ; it != variablesTotStates.end() ; ++it)
@@ -331,6 +333,8 @@ void JointProbabilityTable::FillMap(std::vector<unsigned int> variablesTotStates
   vector_container.push_back(temp_vector);
   }
 
+ std::cout<< "Phase 2 finished" <<std::endl;
+
  //2- Creation of the vector that contains the Iterators
  std::vector< std::vector<unsigned int>::iterator > iterator_container;
  for (auto it = vector_container.begin() ; it != vector_container.end() ; ++it){
@@ -338,6 +342,8 @@ void JointProbabilityTable::FillMap(std::vector<unsigned int> variablesTotStates
    temp_iterator = (*it).begin();
    iterator_container.push_back(temp_iterator);
  }
+
+ std::cout<< "Phase 3 finished" <<std::endl;
 
  //3- filling the data value
  double data=0;
@@ -368,6 +374,8 @@ void JointProbabilityTable::FillMap(std::vector<unsigned int> variablesTotStates
     ++iterator_container[i-1];
    }
  }
+ std::cout<< "Phase 4 finished" <<std::endl;
+
 }
 
 const std::map<std::vector<unsigned int>,double>& JointProbabilityTable::ReturnJointMap(){
