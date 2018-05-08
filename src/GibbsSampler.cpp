@@ -292,7 +292,8 @@ std::vector<std::vector<unsigned int>> GibbsSampler::AccumulateSamples(Bayesnet&
 std::vector<std::vector<unsigned int>> GibbsSampler::AccumulateSamples(Bayesnet& net, unsigned int cycles){
  std::vector<std::vector<unsigned int>> accumulated_samples_vector; 
  std::vector<unsigned int> starting_sample_vector = ReturnSample(net);
- 
+
+ std::cout<< "Sampling starts: Total iteration: "<< cycles <<std::endl;
  for(unsigned int i=0; i<cycles; i++){
   accumulated_samples_vector.push_back(starting_sample_vector);
   starting_sample_vector =  ReturnSample(net, starting_sample_vector);

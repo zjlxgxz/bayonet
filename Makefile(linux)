@@ -31,7 +31,7 @@ compile:
 
 	@echo
 	@echo "=== Starting creation of Shared Library ==="
-	g++ -fPIC -shared -Wl,-install_name,libbayonet.so.1 -o ./bin/lib/libbayonet.so.1.0 ./bin/obj/Bayesnode.o ./bin/obj/Bayesnet.o ./bin/obj/ConditionalProbabilityTable.o ./bin/obj/JointProbabilityTable.o ./bin/obj/MarginalProbabilityTable.o ./bin/obj/RejectionSampler.o ./bin/obj/LWSampler.o ./bin/obj/GibbsSampler.o ./bin/obj/BeliefPropagator.o ./bin/obj/MaximumLikelihoodLearning.o
+	g++ -fPIC -shared -Wl,-soname,libbayonet.so.1 -o ./bin/lib/libbayonet.so.1.0 ./bin/obj/Bayesnode.o ./bin/obj/Bayesnet.o ./bin/obj/ConditionalProbabilityTable.o ./bin/obj/JointProbabilityTable.o ./bin/obj/MarginalProbabilityTable.o ./bin/obj/RejectionSampler.o ./bin/obj/LWSampler.o ./bin/obj/GibbsSampler.o ./bin/obj/BeliefPropagator.o ./bin/obj/MaximumLikelihoodLearning.o
 
 	@echo
 	@echo "=== Creating the Static Library ==="
